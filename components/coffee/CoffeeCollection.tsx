@@ -17,13 +17,15 @@ interface Product {
   tags: string[];
 }
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const PRODUCTS: Product[] = [
   {
     id: 1,
     name: "Milton's Choco Coffee",
     category: 'Cold Coffee · Signature',
     price: '₹180',
-    image: '/sequence/ezgif-frame-001.jpg',
+    image: `${BASE}/sequence/ezgif-frame-001.jpg`,
     tags: ['All', 'Coffee', 'Signature'],
   },
   {
@@ -31,7 +33,7 @@ const PRODUCTS: Product[] = [
     name: 'Classic Cold Brew',
     category: 'Cold Brew · Original',
     price: '₹160',
-    image: '/sequence/ezgif-frame-050.jpg',
+    image: `${BASE}/sequence/ezgif-frame-050.jpg`,
     tags: ['All', 'Cold Brew'],
   },
   {
@@ -39,7 +41,7 @@ const PRODUCTS: Product[] = [
     name: 'Caramel Macchiato',
     category: 'Signature · Premium',
     price: '₹220',
-    image: '/sequence/ezgif-frame-100.jpg',
+    image: `${BASE}/sequence/ezgif-frame-100.jpg`,
     tags: ['All', 'Signature'],
   },
   {
@@ -47,7 +49,7 @@ const PRODUCTS: Product[] = [
     name: 'Dark Mocha',
     category: 'Coffee · Dark Roast',
     price: '₹190',
-    image: '/sequence/ezgif-frame-130.jpg',
+    image: `${BASE}/sequence/ezgif-frame-130.jpg`,
     tags: ['All', 'Coffee'],
   },
 ];

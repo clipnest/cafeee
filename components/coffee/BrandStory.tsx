@@ -13,7 +13,7 @@ export default function BrandStory() {
       {/* Background image with heavy overlay */}
       <div className="absolute inset-0">
         <img
-          src="/sequence/ezgif-frame-001.jpg"
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/sequence/ezgif-frame-001.jpg`}
           alt=""
           loading="lazy"
           className="w-full h-full object-cover opacity-[0.08]"

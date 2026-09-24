@@ -4,30 +4,32 @@ import { motion } from 'framer-motion';
 import { Tilt } from '@/components/core/tilt';
 import { Cursor } from '@/components/core/cursor';
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const FLAVOURS = [
   {
     name: 'Classic Cold Coffee',
     price: '₹160',
     tag: 'Cold Brew',
-    image: '/sequence/ezgif-frame-030.jpg',
+    image: `${BASE}/sequence/ezgif-frame-030.jpg`,
   },
   {
     name: 'Mocha',
     price: '₹200',
     tag: 'Signature',
-    image: '/sequence/ezgif-frame-060.jpg',
+    image: `${BASE}/sequence/ezgif-frame-060.jpg`,
   },
   {
     name: 'Caramel Latte',
     price: '₹220',
     tag: 'Premium',
-    image: '/sequence/ezgif-frame-090.jpg',
+    image: `${BASE}/sequence/ezgif-frame-090.jpg`,
   },
   {
     name: 'Dark Chocolate',
     price: '₹210',
     tag: 'Dark Roast',
-    image: '/sequence/ezgif-frame-150.jpg',
+    image: `${BASE}/sequence/ezgif-frame-150.jpg`,
   },
 ];
 
