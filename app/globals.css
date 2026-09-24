@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ─── Theme Variables ─── */
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #11130F;
+  --bg-espresso: #24130F;
+  --bg-coffee: #3A2118;
+  --text-primary: #F5F1E9;
+  --text-secondary: #AAA59C;
+  --accent-caramel: #B88955;
+  --accent-gold: #D9A66F;
+  --cream: #F3EFE7;
+  --beige: #D8C7AF;
+}
+
+[data-theme="light"] {
+  --bg-primary: #F3EFE7;
+  --bg-secondary: #FDFBF7;
+  --bg-espresso: #F5F0E8;
+  --bg-coffee: #EDE6DA;
+  --text-primary: #24130F;
+  --text-secondary: #6B5B4E;
+  --accent-caramel: #8B6B3D;
+  --accent-gold: #A07840;
+  --cream: #3A2118;
+  --beige: #5C4030;
+}
+
+/* ─── Base ─── */
+html {
+  background: var(--bg-primary);
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) #050505;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(197, 138, 69, 0.4);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ─── Canvas ─── */
+canvas {
+  display: block;
+}
+
+/* ─── Focus Ring ─── */
+input:focus {
+  ring-color: rgba(184, 137, 85, 0.4);
+}
+
+/* ─── Hide scrollbar for horizontal scroll ─── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
