@@ -21,7 +21,7 @@ export default function SignatureCoffee() {
             className="relative aspect-[3/4] rounded-2xl overflow-hidden order-2 lg:order-1"
           >
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/sequence/ezgif-frame-190.jpg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/products/signature-coffee.jpg`}
               alt="Signature iced coffee pour"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover"

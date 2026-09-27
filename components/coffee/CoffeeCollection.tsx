@@ -25,7 +25,7 @@ const PRODUCTS: Product[] = [
     name: "Milton's Choco Coffee",
     category: 'Cold Coffee · Signature',
     price: '₹180',
-    image: `${BASE}/sequence/ezgif-frame-001.jpg`,
+    image: `${BASE}/products/milton-choco.jpg`,
     tags: ['All', 'Coffee', 'Signature'],
   },
   {
@@ -33,7 +33,7 @@ const PRODUCTS: Product[] = [
     name: 'Classic Cold Brew',
     category: 'Cold Brew · Original',
     price: '₹160',
-    image: `${BASE}/sequence/ezgif-frame-050.jpg`,
+    image: `${BASE}/flavours/flavour-1.jpg`,
     tags: ['All', 'Cold Brew'],
   },
   {
@@ -41,7 +41,7 @@ const PRODUCTS: Product[] = [
     name: 'Caramel Macchiato',
     category: 'Signature · Premium',
     price: '₹220',
-    image: `${BASE}/sequence/ezgif-frame-100.jpg`,
+    image: `${BASE}/flavours/flavour-4.jpg`,
     tags: ['All', 'Signature'],
   },
   {
@@ -49,7 +49,7 @@ const PRODUCTS: Product[] = [
     name: 'Dark Mocha',
     category: 'Coffee · Dark Roast',
     price: '₹190',
-    image: `${BASE}/sequence/ezgif-frame-130.jpg`,
+    image: `${BASE}/products/dark-mocha.jpg`,
     tags: ['All', 'Coffee'],
   },
 ];
