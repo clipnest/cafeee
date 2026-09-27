@@ -20,7 +20,7 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const FRAME_COUNT = 190;
 
 function framePath(i: number): string {
-  return `${BASE_PATH}/sequence/ezgif-frame-${String(i + 1).padStart(3, '0')}.jpg`;
+  return `${BASE_PATH}/sequence-v2/ezgif-frame-${String(i + 1).padStart(3, '0')}.jpg`;
 }
 
 /* ──────────────────────────── types ──────────────────────────────── */

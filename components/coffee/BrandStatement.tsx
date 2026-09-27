@@ -66,7 +66,7 @@ export default function BrandStatement() {
             className="relative aspect-[4/3] sm:aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden"
           >
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/sequence/ezgif-frame-150.jpg`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/sequence-v2/ezgif-frame-150.jpg`}
               alt="Premium iced coffee"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover"
