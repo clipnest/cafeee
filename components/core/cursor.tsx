@@ -22,7 +22,9 @@ export function Cursor({
   const y = useSpring(0, { stiffness: 300, damping: 28 });
 
   useEffect(() => {
-    setIsTouch('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    const isCoarse = window.matchMedia('(pointer: coarse)').matches;
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsTouch(isCoarse || hasTouch);
   }, []);
 
   const handleMove = (e: React.MouseEvent) => {

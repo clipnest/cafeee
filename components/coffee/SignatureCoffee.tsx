@@ -7,18 +7,19 @@ import { GlowEffect } from '@/components/core/glow-effect';
 export default function SignatureCoffee() {
   return (
     <section
-      className="relative py-28 sm:py-36 overflow-hidden"
+      id="signature"
+      className="relative py-16 sm:py-24 lg:py-36 overflow-hidden"
       style={{ background: '#11130F' }}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, scale: 1.04 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: 'easeOut' }}
-            className="relative aspect-[3/4] rounded-2xl overflow-hidden order-2 lg:order-1"
+            className="relative aspect-[4/3] sm:aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden order-2 lg:order-1"
           >
             <img
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/products/signature-coffee.jpg`}
@@ -36,7 +37,7 @@ export default function SignatureCoffee() {
           </motion.div>
 
           {/* Text */}
-          <div className="flex flex-col gap-6 sm:gap-8 order-1 lg:order-2">
+          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 order-1 lg:order-2">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -53,7 +54,7 @@ export default function SignatureCoffee() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.04em] leading-[0.95]"
+              className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.04em] leading-[0.95]"
               style={{ color: '#F5F1E9' }}
             >
               THE
@@ -80,20 +81,20 @@ export default function SignatureCoffee() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-col gap-5 mt-2"
+              className="flex flex-col gap-4 sm:gap-5 mt-1 sm:mt-2"
             >
               <span
                 className="text-xs font-medium tracking-[0.15em] uppercase"
                 style={{ color: '#AAA59C' }}
               >
                 FROM{' '}
-                <span className="text-2xl font-bold tracking-tight" style={{ color: '#D9A66F' }}>
+                <span className="text-xl sm:text-2xl font-bold tracking-tight" style={{ color: '#D9A66F' }}>
                   ₹180
                 </span>
               </span>
 
               {/* Glow CTA */}
-              <div className="relative inline-flex self-start rounded-lg overflow-visible">
+              <div className="relative inline-flex self-start rounded-lg overflow-visible w-full sm:w-auto">
                 <GlowEffect
                   colors={['#B88955', '#D9A66F', '#F3EFE7', '#6B422E']}
                   mode="colorShift"
@@ -102,8 +103,8 @@ export default function SignatureCoffee() {
                   scale={0.9}
                 />
                 <a
-                  href="#"
-                  className="relative z-10 inline-flex items-center gap-3 px-8 py-4 rounded-lg text-xs font-medium tracking-[0.2em] uppercase transition-colors duration-300"
+                  href="#collection"
+                  className="relative z-10 inline-flex items-center justify-center gap-3 px-8 py-3.5 sm:py-4 rounded-lg text-xs font-medium tracking-[0.2em] uppercase transition-colors duration-300 w-full sm:w-auto min-h-[48px] active:scale-95"
                   style={{
                     background: '#11130F',
                     color: '#F5F1E9',

@@ -102,26 +102,26 @@ function TextOverlay({
   const y = useTransform(
     progress,
     [beat.start, beat.start + fade, beat.end - fade, beat.end],
-    [40, 0, 0, -40],
+    [30, 0, 0, -30],
   );
 
   /* positioning classes */
   const pos =
     beat.align === 'left'
-      ? 'left-6 sm:left-12 lg:left-20 items-start text-left'
+      ? 'left-5 sm:left-12 lg:left-20 items-start text-left'
       : beat.align === 'right'
-        ? 'right-6 sm:right-12 lg:right-20 items-end text-right'
+        ? 'right-5 sm:right-12 lg:right-20 items-end text-right'
         : 'left-1/2 -translate-x-1/2 items-center text-center';
 
   return (
     <motion.div
       style={{ opacity, y }}
-      className={`absolute bottom-[6%] sm:bottom-[10%] md:bottom-[12%] flex flex-col gap-3 sm:gap-5
-        max-w-[88%] sm:max-w-md md:max-w-lg pointer-events-none z-10 ${pos}`}
+      className={`absolute bottom-[calc(7%+env(safe-area-inset-bottom,0px))] sm:bottom-[10%] md:bottom-[12%] flex flex-col gap-2.5 sm:gap-4
+        w-full max-w-[calc(100vw-36px)] sm:max-w-md md:max-w-lg pointer-events-none z-10 ${pos}`}
     >
       {/* title */}
       <h2
-        className="whitespace-pre-line text-[clamp(2rem,6vw,5rem)] font-bold leading-[0.92] tracking-[-0.045em]"
+        className="whitespace-pre-line text-[clamp(1.75rem,6.5vw,4.5rem)] font-bold leading-[0.94] tracking-[-0.04em]"
         style={{ color: 'rgba(255,255,255,0.92)' }}
       >
         {beat.title}
@@ -129,8 +129,8 @@ function TextOverlay({
 
       {/* subtitle */}
       <p
-        className="text-[clamp(0.8rem,1.8vw,1.15rem)] font-light leading-relaxed tracking-[-0.01em]"
-        style={{ color: 'rgba(255,255,255,0.55)' }}
+        className="text-[clamp(0.8rem,1.8vw,1.15rem)] font-light leading-relaxed tracking-[-0.01em] max-w-xs sm:max-w-md"
+        style={{ color: 'rgba(255,255,255,0.6)' }}
       >
         {beat.subtitle}
       </p>
@@ -138,12 +138,13 @@ function TextOverlay({
       {/* CTA */}
       {beat.cta && (
         <a
-          href="#"
-          className="mt-4 sm:mt-8 inline-block self-center px-10 py-4 sm:px-14 sm:py-5
-            border border-white/[0.18] text-white/90 text-[0.7rem] sm:text-xs
+          href="#coffee"
+          className="mt-3 sm:mt-6 inline-flex items-center justify-center min-h-[44px] px-8 py-3 sm:px-14 sm:py-4
+            border border-white/[0.18] text-white/90 text-xs
             font-medium tracking-[0.2em] uppercase
             hover:bg-white/[0.08] hover:border-white/30
-            transition-all duration-700 pointer-events-auto"
+            active:scale-95
+            transition-all duration-300 pointer-events-auto"
         >
           Order Now
         </a>
@@ -161,7 +162,7 @@ function ScrollIndicator({ progress }: { progress: MotionValue<number> }) {
   return (
     <motion.div
       style={{ opacity, y }}
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 pointer-events-none"
+      className="absolute bottom-[calc(2rem+env(safe-area-inset-bottom,0px))] left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-3 pointer-events-none"
     >
       <span
         className="text-[0.6rem] sm:text-[0.65rem] font-medium tracking-[0.3em] uppercase"
@@ -291,7 +292,7 @@ export default function CoffeeScroll() {
       const ctx = cvs.getContext('2d', { alpha: false });
       if (!ctx) return;
 
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const { width: cw, height: ch } = cvs.getBoundingClientRect();
 
       // only resize the buffer when dimensions actually change
@@ -357,7 +358,7 @@ export default function CoffeeScroll() {
       <AnimatePresence>{!ready && <LoadingScreen progress={loadPct} />}</AnimatePresence>
 
       {/* scroll container */}
-      <div ref={containerRef} className="relative" style={{ height: '500vh' }}>
+      <div ref={containerRef} className="relative h-[420vh] md:h-[500vh]">
         {/* sticky viewport */}
         <div className="sticky top-0 h-screen w-full overflow-hidden">
           {/* canvas */}

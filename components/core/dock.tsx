@@ -5,6 +5,7 @@ import {
   useContext,
   useRef,
   useState,
+  useEffect,
   type ReactNode,
 } from 'react';
 import {
@@ -34,9 +35,9 @@ export function Dock({
       <motion.nav
         onMouseMove={(e) => mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className={`flex items-end gap-1.5 px-3 py-2.5 rounded-2xl ${className}`}
+        className={`flex items-end gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2.5 rounded-2xl max-w-[calc(100vw-24px)] overflow-x-auto scrollbar-hide ${className}`}
         style={{
-          background: 'rgba(36, 19, 15, 0.75)',
+          background: 'rgba(36, 19, 15, 0.85)',
           border: '1px solid rgba(243, 239, 231, 0.12)',
           backdropFilter: 'blur(20px)',
           WebkitBackdropFilter: 'blur(20px)',
@@ -63,6 +64,14 @@ export function DockItem({
   const ref = useRef<HTMLDivElement>(null);
   const mouseX = useContext(MouseCtx);
   const [hovered, setHovered] = useState(false);
+  const isTouchRef = useRef(false);
+
+  useEffect(() => {
+    isTouchRef.current =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia('(pointer: coarse)').matches;
+  }, []);
 
   const distance = useTransform(mouseX, (val: number) => {
     const el = ref.current;
@@ -71,7 +80,7 @@ export function DockItem({
     return val - rect.left - rect.width / 2;
   });
 
-  const sizeRaw = useTransform(distance, [-100, 0, 100], [40, 56, 40]);
+  const sizeRaw = useTransform(distance, [-100, 0, 100], [36, 52, 36]);
   const size = useSpring(sizeRaw, { mass: 0.1, stiffness: 150, damping: 12 });
 
   const handleClick = (e: React.MouseEvent) => {
@@ -86,12 +95,14 @@ export function DockItem({
   return (
     <button
       onClick={handleClick}
-      onMouseEnter={() => setHovered(true)}
+      onMouseEnter={() => {
+        if (!isTouchRef.current) setHovered(true);
+      }}
       onMouseLeave={() => setHovered(false)}
-      className="relative flex flex-col items-center outline-none"
+      className="relative flex flex-col items-center outline-none touch-manipulation"
     >
       <AnimatePresence>
-        {hovered && (
+        {hovered && !isTouchRef.current && (
           <motion.span
             initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}

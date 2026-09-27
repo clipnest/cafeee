@@ -34,7 +34,10 @@ export default function CoffeeDock() {
   }, [light]);
 
   return (
-    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50">
+    <div
+      className="fixed left-1/2 -translate-x-1/2 z-40 max-w-[calc(100vw-16px)]"
+      style={{ bottom: 'max(1rem, env(safe-area-inset-bottom, 1rem))' }}
+    >
       <Dock>
         {NAV.map((item) => {
           const Icon = item.icon;

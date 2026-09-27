@@ -89,7 +89,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
             </div>
 
             {/* Info */}
-            <div className="p-5 sm:p-6 flex flex-col gap-2">
+            <div className="p-4 sm:p-6 flex flex-col gap-2">
               <span
                 className="text-[10px] font-medium tracking-[0.15em] uppercase"
                 style={{ color: '#B88955' }}
@@ -102,15 +102,15 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               >
                 {product.name}
               </h3>
-              <div className="flex items-center justify-between mt-1">
+              <div className="flex items-center justify-between mt-1 pt-1">
                 <span
-                  className="text-lg font-bold"
+                  className="text-base sm:text-lg font-bold"
                   style={{ color: '#D9A66F' }}
                 >
                   {product.price}
                 </span>
                 <span
-                  className="text-xs font-medium tracking-[0.1em] uppercase transition-colors duration-300 hover:text-[#D9A66F]"
+                  className="min-h-[44px] flex items-center text-xs font-medium tracking-[0.1em] uppercase transition-colors duration-300 hover:text-[#D9A66F]"
                   style={{ color: '#AAA59C' }}
                 >
                   Explore →
@@ -135,26 +135,26 @@ export default function CoffeeCollection() {
   return (
     <section
       id="coffee"
-      className="relative py-28 sm:py-36 overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-36 overflow-hidden"
       style={{ background: '#050505' }}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col items-center text-center mb-14 sm:mb-20"
+          className="flex flex-col items-center text-center mb-8 sm:mb-14"
         >
           <span
-            className="text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-4"
+            className="text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-3 sm:mb-4"
             style={{ color: '#B88955' }}
           >
             Our Collection
           </span>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.04em]"
+            className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-[-0.04em]"
             style={{ color: '#F5F1E9' }}
           >
             THE COFFEE MENU
@@ -167,7 +167,7 @@ export default function CoffeeCollection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex justify-center mb-14"
+          className="flex justify-center mb-8 sm:mb-14"
         >
           <AnimatedBackground
             items={TABS}
@@ -177,7 +177,7 @@ export default function CoffeeCollection() {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {filtered.map((product, i) => (
             <ProductCard key={product.id} product={product} index={i} />
           ))}

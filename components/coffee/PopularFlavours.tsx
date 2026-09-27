@@ -37,26 +37,26 @@ export default function PopularFlavours() {
   return (
     <section
       id="collection"
-      className="relative py-28 sm:py-36 overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-36 overflow-hidden"
       style={{ background: '#11130F' }}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mb-14 sm:mb-20"
+          className="mb-8 sm:mb-16"
         >
           <span
-            className="block text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-5"
+            className="block text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-3 sm:mb-5"
             style={{ color: '#B88955' }}
           >
             Popular Picks
           </span>
           <h2
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.04em] leading-[0.95]"
+            className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.04em] leading-[0.95]"
             style={{ color: '#F5F1E9' }}
           >
             FIND YOUR
@@ -66,7 +66,7 @@ export default function PopularFlavours() {
         </motion.div>
 
         {/* Horizontal scroll on mobile, grid on desktop */}
-        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0">
+        <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
           {FLAVOURS.map((f, i) => (
             <motion.div
               key={f.name}
@@ -74,7 +74,7 @@ export default function PopularFlavours() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1 }}
-              className="min-w-[260px] sm:min-w-[280px] lg:min-w-0 snap-start"
+              className="min-w-[76vw] max-w-[280px] sm:min-w-[280px] lg:min-w-0 snap-start flex-shrink-0"
             >
               <Tilt rotationFactor={6}>
                 <Cursor text="VIEW +">
@@ -115,7 +115,7 @@ export default function PopularFlavours() {
                       >
                         {f.name}
                       </h3>
-                      <div className="flex items-center justify-between mt-3">
+                      <div className="flex items-center justify-between mt-3 pt-1">
                         <span
                           className="text-base font-bold"
                           style={{ color: '#D9A66F' }}
@@ -123,7 +123,7 @@ export default function PopularFlavours() {
                           {f.price}
                         </span>
                         <button
-                          className="px-4 py-1.5 rounded-full text-[9px] font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:bg-[#B88955] hover:text-[#050505]"
+                          className="min-h-[44px] px-4 py-2 rounded-full text-[9px] font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:bg-[#B88955] hover:text-[#050505] active:scale-95 flex items-center justify-center"
                           style={{
                             background: 'rgba(184, 137, 85, 0.12)',
                             color: '#B88955',

@@ -1,4 +1,5 @@
 import CoffeeScroll from '@/components/CoffeeScroll';
+import HeaderNav from '@/components/navigation/HeaderNav';
 import BrandStatement from '@/components/coffee/BrandStatement';
 import CoffeeCollection from '@/components/coffee/CoffeeCollection';
 import SignatureCoffee from '@/components/coffee/SignatureCoffee';
@@ -12,6 +13,9 @@ import CoffeeDock from '@/components/navigation/CoffeeDock';
 export default function Home() {
   return (
     <>
+      {/* Top Header Navigation (Mobile + Desktop) */}
+      <HeaderNav />
+
       {/* Hero — existing scroll animation (untouched) */}
       <div id="home">
         <CoffeeScroll />

@@ -7,7 +7,7 @@ export default function BrandStory() {
   return (
     <section
       id="story"
-      className="relative py-28 sm:py-40 overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-40 overflow-hidden"
       style={{ background: '#050505' }}
     >
       {/* Background image with heavy overlay */}
@@ -27,20 +27,20 @@ export default function BrandStory() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-6 sm:px-10 lg:px-16 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-8 lg:px-16 text-center">
         <motion.span
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="block text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-8 sm:mb-12"
+          className="block text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-6 sm:mb-10"
           style={{ color: '#B88955' }}
         >
           Our Story
         </motion.span>
 
         <h2
-          className="text-[clamp(1.8rem,5vw,4.5rem)] font-bold tracking-[-0.04em] leading-[1] mb-8 sm:mb-12"
+          className="text-[clamp(1.5rem,5.5vw,4.25rem)] font-bold tracking-[-0.04em] leading-[1.02] mb-6 sm:mb-10"
           style={{ color: '#F5F1E9' }}
         >
           <TextEffect per="word" preset="fade">
@@ -66,7 +66,7 @@ export default function BrandStory() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mx-auto mt-14 sm:mt-20 h-px w-24 origin-left"
+          className="mx-auto mt-10 sm:mt-16 h-px w-20 sm:w-24 origin-left"
           style={{ background: 'rgba(184, 137, 85, 0.3)' }}
         />
       </div>

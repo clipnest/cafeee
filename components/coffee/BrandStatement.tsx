@@ -6,13 +6,14 @@ import { TextEffect } from '@/components/core/text-effect';
 export default function BrandStatement() {
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden"
+      id="experience"
+      className="relative flex items-center overflow-hidden py-16 sm:py-24 lg:py-36"
       style={{ background: '#050505' }}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16 py-32 sm:py-40">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-center">
           {/* Text */}
-          <div className="flex flex-col gap-6 sm:gap-8">
+          <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
             <span
               className="text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase"
               style={{ color: '#B88955' }}
@@ -20,7 +21,7 @@ export default function BrandStatement() {
               The Experience
             </span>
 
-            <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.92] tracking-[-0.045em]">
+            <h2 className="text-[clamp(1.85rem,7vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.04em]">
               <TextEffect per="char" preset="fade">
                 {'COFFEE,\nWITHOUT\nTHE ORDINARY.'}
               </TextEffect>
@@ -44,7 +45,7 @@ export default function BrandStatement() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="mt-2 inline-flex items-center gap-2 text-xs font-medium tracking-[0.15em] uppercase transition-colors duration-300 hover:text-[#D9A66F]"
+              className="mt-1 sm:mt-2 inline-flex items-center gap-2 min-h-[44px] text-xs font-medium tracking-[0.15em] uppercase transition-colors duration-300 hover:text-[#D9A66F]"
               style={{ color: '#B88955' }}
               onClick={(e) => {
                 e.preventDefault();
@@ -62,7 +63,7 @@ export default function BrandStatement() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-            className="relative aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden"
+            className="relative aspect-[4/3] sm:aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden"
           >
             <img
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/sequence/ezgif-frame-150.jpg`}

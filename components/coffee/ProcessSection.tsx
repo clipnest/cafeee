@@ -28,18 +28,18 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="relative py-28 sm:py-36 overflow-hidden"
+      className="relative py-16 sm:py-24 lg:py-36 overflow-hidden"
       style={{ background: '#050505' }}
     >
-      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 lg:px-16">
         {/* Header */}
-        <div className="max-w-2xl mb-16 sm:mb-24">
+        <div className="max-w-2xl mb-10 sm:mb-16 lg:mb-24">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="block text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-5"
+            className="block text-[10px] sm:text-xs font-medium tracking-[0.3em] uppercase mb-3 sm:mb-5"
             style={{ color: '#B88955' }}
           >
             The Process
@@ -50,7 +50,7 @@ export default function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.04em] leading-[0.95] mb-6"
+            className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-[-0.04em] leading-[0.95] mb-4 sm:mb-6"
             style={{ color: '#F5F1E9' }}
           >
             THE TASTE STARTS
@@ -73,7 +73,7 @@ export default function ProcessSection() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {STEPS.map((step, i) => {
             const Icon = step.icon;
             return (
@@ -87,7 +87,7 @@ export default function ProcessSection() {
                   delay: i * 0.1,
                   ease: 'easeOut',
                 }}
-                className="group p-7 sm:p-8 rounded-2xl transition-all duration-500"
+                className="group p-6 sm:p-8 rounded-2xl transition-all duration-500"
                 style={{
                   background: '#11130F',
                   border: '1px solid rgba(243, 239, 231, 0.06)',

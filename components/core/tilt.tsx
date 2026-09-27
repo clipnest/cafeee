@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 interface TiltProps {
@@ -17,10 +17,19 @@ export function Tilt({
   style,
 }: TiltProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const isTouchRef = useRef(false);
   const rotateX = useSpring(0, { stiffness: 200, damping: 20 });
   const rotateY = useSpring(0, { stiffness: 200, damping: 20 });
 
+  useEffect(() => {
+    isTouchRef.current =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      window.matchMedia('(pointer: coarse)').matches;
+  }, []);
+
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isTouchRef.current) return;
     const el = ref.current;
     if (!el) return;
     const rect = el.getBoundingClientRect();
@@ -31,6 +40,7 @@ export function Tilt({
   };
 
   const handleLeave = () => {
+    if (isTouchRef.current) return;
     rotateX.set(0);
     rotateY.set(0);
   };
