@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TextEffect } from '@/components/core/text-effect';
 
 export default function BrandStatement() {
   return (
@@ -21,17 +20,22 @@ export default function BrandStatement() {
               The Experience
             </span>
 
-            <h2 className="text-[clamp(1.85rem,7vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.04em]">
-              <TextEffect per="char" preset="fade">
-                {'COFFEE,\nWITHOUT\nTHE ORDINARY.'}
-              </TextEffect>
-            </h2>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              className="text-[clamp(1.85rem,7vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.04em] whitespace-pre-line"
+              style={{ color: '#F5F1E9' }}
+            >
+              {'COFFEE,\nWITHOUT\nTHE ORDINARY.'}
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
               className="max-w-md text-sm sm:text-base leading-relaxed"
               style={{ color: '#AAA59C' }}
             >
@@ -43,8 +47,8 @@ export default function BrandStatement() {
               href="#coffee"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.9 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-1 sm:mt-2 inline-flex items-center gap-2 min-h-[44px] text-xs font-medium tracking-[0.15em] uppercase transition-colors duration-300 hover:text-[#D9A66F]"
               style={{ color: '#B88955' }}
               onClick={(e) => {
@@ -61,8 +65,8 @@ export default function BrandStatement() {
           <motion.div
             initial={{ opacity: 0, scale: 1.04 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="relative aspect-[4/3] sm:aspect-[3/4] lg:aspect-[4/5] rounded-2xl overflow-hidden"
           >
             <img

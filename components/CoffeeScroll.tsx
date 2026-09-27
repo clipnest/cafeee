@@ -189,8 +189,8 @@ function LoadingScreen({ progress }: { progress: number }) {
       key="loader"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8"
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 pointer-events-none"
       style={{ background: '#050505' }}
     >
       {/* text */}
@@ -260,12 +260,19 @@ export default function CoffeeScroll() {
       if (!cancelled) setLoadPct(Math.round((loaded / FRAME_COUNT) * 100));
       if (loaded === FRAME_COUNT && !cancelled) {
         setImages(imgs);
-        // brief hold so the user sees 100 %
         setTimeout(() => {
           if (!cancelled) setReady(true);
-        }, 400);
+        }, 300);
       }
     };
+
+    // Safety fallback: ensure site becomes interactive even if network stalls on a frame
+    const safetyTimer = setTimeout(() => {
+      if (!cancelled && loaded > 15) {
+        setImages(imgs);
+        setReady(true);
+      }
+    }, 3000);
 
     for (let i = 0; i < FRAME_COUNT; i++) {
       const img = new Image();
@@ -278,6 +285,7 @@ export default function CoffeeScroll() {
 
     return () => {
       cancelled = true;
+      clearTimeout(safetyTimer);
     };
   }, []);
 
@@ -285,7 +293,7 @@ export default function CoffeeScroll() {
   const draw = useCallback(
     (idx: number) => {
       const cvs = canvasRef.current;
-      const img = images[idx];
+      const img = images[idx] || images[0];
       if (!cvs || !img || !img.naturalWidth) return;
 
       const ctx = cvs.getContext('2d', { alpha: false });

@@ -35,11 +35,6 @@
 html {
   background: var(--bg-primary);
   scroll-behavior: auto;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 body {
@@ -47,12 +42,9 @@ body {
     'Segoe UI', Roboto, sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* ─── Safe Area Helpers ─── */
