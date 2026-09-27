@@ -11,25 +11,25 @@ const FLAVOURS = [
     name: 'Classic Cold Coffee',
     price: '₹160',
     tag: 'Cold Brew',
-    image: `${BASE}/sequence/ezgif-frame-030.jpg`,
+    image: `${BASE}/flavours/flavour-1.jpg`,
   },
   {
     name: 'Mocha',
     price: '₹200',
     tag: 'Signature',
-    image: `${BASE}/sequence/ezgif-frame-060.jpg`,
+    image: `${BASE}/flavours/flavour-2.jpg`,
   },
   {
     name: 'Caramel Latte',
     price: '₹220',
     tag: 'Premium',
-    image: `${BASE}/sequence/ezgif-frame-090.jpg`,
+    image: `${BASE}/flavours/flavour-4.jpg`,
   },
   {
     name: 'Dark Chocolate',
     price: '₹210',
     tag: 'Dark Roast',
-    image: `${BASE}/sequence/ezgif-frame-150.jpg`,
+    image: `${BASE}/flavours/flavour-3.jpg`,
   },
 ];
 
